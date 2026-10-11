@@ -30,3 +30,11 @@
 
 ## 更新する欄
 参照ブランチ／コミット、作業担当、タスクID、変更要約、証拠リンク、未決定、次の一手。
+
+## GitHub接続（2026-10-12）
+- 作業担当：Codex／ブランチ：main／タスク：ユーザー依頼のGitHub初回保存。
+- リポジトリ：https://github.com/moedann/Checkpoint（非公開）。
+- 初回保存コミット：c094e0206a77c2c8e2e78148fb04be927116fe05。
+- git push -u origin main 成功。git ls-remoteでGitHub側mainと初回コミットの一致を確認。
+- .gitignoreで環境変数・署名鍵・JVMクラッシュダンプを除外。
+- 今回アプリの実装変更・テスト・ビルド・実機確認は行っていない。次の開発作業はTASK-001。

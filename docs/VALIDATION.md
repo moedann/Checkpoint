@@ -30,3 +30,11 @@ Kotlin検証は実在するモジュール・テストを確認してGradleタ�
 - 実際の結果とログ：
 - 判定：合格／不合格／未実施
 - 残課題と次の対応：
+
+## GitHub初回保存（2026-10-12／Codex）
+- 対象：main、c094e0206a77c2c8e2e78148fb04be927116fe05。
+- gh repo create moedann/Checkpoint --private：成功。
+- git push -u origin main：成功。
+- git rev-parse HEAD と git ls-remote origin refs/heads/main：同じコミットを確認。
+- 保存対象の既知のトークン・秘密鍵パターン検索：該当なし。署名鍵・.env・*.hprofは除外。
+- アプリの解析・テスト・APKビルド・実機確認：未実施（GitHub接続のみの作業）。
