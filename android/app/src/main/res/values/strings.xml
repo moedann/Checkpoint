@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">チェックポイント</string>
+    <string name="accessibility_service_label">チェックポイント 起動確認サービス</string>
+</resources>

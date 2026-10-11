@@ -1,0 +1,22 @@
+[
+  {
+    "file": "PRODUCT_PLAN.md",
+    "sha256": "6a2d6ec41b0df3e3f55f96c7383369d36ae9bdb6de0030fed98a1aa871f3deca",
+    "origin": "2026-10-12 uploaded snapshot; not code-verified"
+  },
+  {
+    "file": "要件定義.txt",
+    "sha256": "cbc71e9653c713bc4b61dcf7b7a68fb9b3b7cf9187d5f4313409815f72f14307",
+    "origin": "2026-10-12 uploaded snapshot; not code-verified"
+  },
+  {
+    "file": "差別化要件定義.txt",
+    "sha256": "e098bacddb3f03b8dc8b0432c4a83be10766412bdb94f8525481883a721ed543",
+    "origin": "2026-10-12 uploaded snapshot; not code-verified"
+  },
+  {
+    "file": "pubspec.yaml",
+    "sha256": "a66f29d2c0c90adbbba26f607d54d5d10315ceffcf4b6d478bd59c0424bf6fc8",
+    "origin": "2026-10-12 uploaded snapshot; not code-verified"
+  }
+]
