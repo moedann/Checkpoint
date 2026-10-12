@@ -52,3 +52,12 @@ Kotlin検証は実在するモジュール・テストを確認してGradleタ�
 - 残課題：Kotlinの宣言1.8.22とログ上の実効2.0.0の差、互換性警告、解析指摘。修正は別タスク。
 - Pixel 7a実機・権限・他アプリ上のオーバーレイ・ライフサイクル：未実施。
 - 詳細報告：https://chatgpt.com/local/01a12d51-c03b-77c2-b3d5-5b41204840fb?hostId=local
+
+## TASK-FLOW-001：ブラウザ経由の依頼・受領確認（2026-10-12）
+- 依頼基準：8bb2c26143b21606116da3a448b14d1e6db5098f。Codex実行HEAD：27599e572e70e7fb2c2371e2b505589f1664682f、ブランチwork。
+- 成功：新規タスク送信→Codex起動→シェル読み取り→結果報告。Workから基準文書の抜粋を追加送信し、Codexが受領してローカル版と区別できたことも確認。
+- Codex報告：開始・終了ともgit status --shortは空。Flutterの保持済み実行ファイルと版情報は3.44.0。java／javacは17.0.20.1。FlutterのPATH設定は別途保持された起動手順の有効化が必要。
+- 失敗：git ls-remoteの通常Git接続でproxy port8080へ接続できず、リモート照合・fetchは未実施。Git同期成功とは扱わない。
+- Work独立確認：GitHub接続で8bb2c26のWORKFLOW・STATUSを取得。GitHubのコミット比較で27599e5から8bb2c26は祖先関係あり、変更はSTATUS・WORKFLOWのみ。製品コードの差分なし。
+- ソースの受け渡し・適用、実装後差分の保存、最新HEADでのテストは今回の検証範囲外。解析・テスト・APKビルドの再実行なし。
+- 実行報告：https://chatgpt.com/local/01a12e80-b499-7233-922c-dc17127190fa

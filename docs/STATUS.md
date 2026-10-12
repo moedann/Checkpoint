@@ -80,3 +80,14 @@
 - 常時自動運転・標準の直接API・会話履歴の自動同期とは区別する。
 - 起動確認：最新の基準コミットを明示する読み取り専用タスクで検証予定。準備スナップショットとGitHub HEADのずれを必ず確認し、古いコードを最新扱いしない。
 - 製品実装の変更は今回なし。次の製品タスクの仕様確定・TASK-001監査成果の照合・実機確認は別作業。
+
+## TASK-FLOW-001の結果（2026-10-12）
+- WorkがCodex画面で環境Checkpointを選択し、新規の読み取り専用タスクを送信。Codexの起動・結果報告・Workからの追加文書受け渡しを画面で確認。
+- 実行環境のブランチwork、HEAD27599e572e70e7fb2c2371e2b505589f1664682f。開始・終了時の作業ツリーは空とのCodex報告。保持されたFlutter3.44.0、JDK/java/javac17.0.20.1を確認。
+- Codexの通常Git接続：ls-remoteがFailed to connect to proxy port 8080で失敗。fetchは未実施。プロキシ変更・認証回避は行っていない。
+- Work側ではGitHubから基準8bb2c26143b21606116da3a448b14d1e6db5098fのWORKFLOW・STATUSを取得でき、抜粋を画面経由で渡しCodexの受領・参照版の区別を確認。
+- WorkのGitHub比較：27599e5→8bb2c26は4コミット先行、差分はdocs/STATUS.md・docs/WORKFLOW.mdだけ。対象2版の製品コード差分はない。CodexのローカルHEAD自体は同期していない。
+- 確認済み経路：Work→Codex画面操作→現行管理環境→読み取り・結果報告。GitHubとのGit自動同期・直接push・実装後の受け渡しは今回未検証。
+- 追加の解析・テスト・APKビルド、製品変更、課金はなし。
+- 次：製品タスクの開始時に最新の必要文書・ソースをWork側で同期確認し、監査成果とGit文書を照合する。Linear起動設定は保留のまま。
+- 実行報告：https://chatgpt.com/local/01a12e80-b499-7233-922c-dc17127190fa
