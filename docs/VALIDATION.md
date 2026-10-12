@@ -61,3 +61,26 @@ Kotlin検証は実在するモジュール・テストを確認してGradleタ�
 - Work独立確認：GitHub接続で8bb2c26のWORKFLOW・STATUSを取得。GitHubのコミット比較で27599e5から8bb2c26は祖先関係あり、変更はSTATUS・WORKFLOWのみ。製品コードの差分なし。
 - ソースの受け渡し・適用、実装後差分の保存、最新HEADでのテストは今回の検証範囲外。解析・テスト・APKビルドの再実行なし。
 - 実行報告：https://chatgpt.com/local/01a12e80-b499-7233-922c-dc17127190fa
+
+## TASK-003（2026-10-12）
+対象：main 479cc4bcef750e475e3f228d58a4a150cb6e84a5からのtask-003-question-core-20261012差分。
+環境：Linux x64、Flutter 3.44.0（559ffa3f75）、Dart 3.12.0。SDKは作業用一時領域に導入。
+Flutterのフォント3個はGoogle Fontsの同名公開ファイルを取得し、Git blob SHAが基準コミットの各ファイルと一致することを確認。元ファイルは変更しない。
+
+| 検証 | 実行 | 結果 |
+|---|---|---|
+| Flutter依存解決 | flutter pub get | 成功。unorm_dart 0.3.3のみ追加 |
+| Flutter全テスト | flutter test --no-pub --reporter expanded | 成功、45件（既存14＋新規31） |
+| 追加範囲の解析 | flutter analyze --no-pub lib/question_engine test/question_engine_test.dart | 成功、No issues found |
+| 全体解析 | flutter analyze --no-pub | info16件で終了1。全件が未変更review_questions_screen.dartに所在。errors/warningsなし |
+| JSON形式 | Python jsonschema Draft202012Validator.check_schema＋fixture validate | 成功、10問 |
+| schema同期 | Pythonでschema_data.dartのraw JSONと公開schemaを比較 | 成功 |
+| 差分空白 | git diff --check | 成功 |
+| Kotlin/Gradle | 未実行 | Android SDK・Gradle実行環境なし。Kotlinは未変更 |
+| APK・実機 | 未実行 | UI／ゲートは未接続、実機なし |
+
+新規31件は10問の採点、正答IDの順序独立、誤答・部分正解、NFKC・trim・case設定、数値形式・絶対/相対許容差、表のセル別採点、順序/分類/語群対応、自己採点と未評価の区別、JSON往復・不変性、不正データ・ID/キー参照・上限、保存の重複/競合・版更新/同時インスタンス/読込失敗/最大長IDを含む。
+最初の試験でfixtureのfield IDをcalcとしたテスト側の誤りを検出し、正しいcalculationに訂正。最終実行は45件成功。
+Dart 3.7.2でも同じ31件をpackage:testの一時ハーネスで先行実行したが、上表の正式結果は元のFlutterテストファイルを使った3.44.0での実行。
+
+注意：取り組み・採点成功と答え合わせ確認、他アプリ利用解放、学習効果を分ける。今回の結果から6方式の実機操作や188資格への対応を検証済みとは扱わない。

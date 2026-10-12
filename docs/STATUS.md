@@ -91,3 +91,16 @@
 - 追加の解析・テスト・APKビルド、製品変更、課金はなし。
 - 次：製品タスクの開始時に最新の必要文書・ソースをWork側で同期確認し、監査成果とGit文書を照合する。Linear起動設定は保留のまま。
 - 実行報告：https://chatgpt.com/local/01a12e80-b499-7233-922c-dc17127190fa
+
+## TASK-003：6方式問題エンジンの基盤実装（2026-10-12）
+- ユーザー依頼：6方式問題エンジン・外部作問設計セットを参考に実装開始。
+- 作業担当：Codex（Work内で直接実装）。ブランチ：task-003-question-core-20261012。
+- 基準コミット：main 479cc4bcef750e475e3f228d58a4a150cb6e84a5。GitHub接続から固定版のソースを取得。通常git cloneの認証が使えないため、ローカルはテキストスナップショット。GitHubの変更は元コミットを親に作成し、元のバイナリ・他プラットフォームファイルを維持。
+- 実装：共通の不変モデル、固定スキーマ検証＋論理検証、6方式（ordering/grouping含む）＋自己採点、UTF-8 JSON import/export、位置付きエラー、読み取り専用preview、重複／版番号競合チェック、原子保存API。
+- 既存復習の調査：ReviewQuestionParserはマーカー付きテキスト取り込み、ReviewQuestion/ReviewQuestionModelは問題文と答えの文字列。ReviewQuestionsScreen→bridge→FlutterBridge→PreferencesRepositoryの経路。型付き6方式を旧DBへ直接変換せず、今回独立ドメインを追加。既存画面・Kotlinコードは未変更。
+- 検証：Flutter 3.44.0／Dart 3.12.0でflutter test 45件成功（既存14＋新規31）。追加コードとテストの解析は指摘0件。全体解析は既存画面のinfo16件、終了コード1。新規エラー・警告はなし。
+- 形式：公開schemaと10問fixtureのPython jsonschema検証、埋め込みschema一致確認が成功。unorm_dartのみ追加、lockは0.3.3。他の依存は変更なし。
+- 未実施：Kotlin/Gradle再実行、APK、Pixel 7a。当地にAndroid SDK・Gradle実行環境がないため。既存Kotlinソース／テストの変更なしを確認したが、実行の代替証拠とは扱わない。
+- 未接続：アプリ内管理／ファイル選択／6方式プレイヤー／解答履歴永続化／外部Web作問／起動時ゲート。今回の採点結果は利用解放判定を持たない。
+- 次：TASK-004でFlutterの6方式プレイヤー・結果画面を実装し、後続TASK-005取り込みUX、TASK-006起動時ゲートを接続。Kotlin/Androidの検証は既存Checkpoint環境で別途実行。
+- 詳細：tasks/TASK-003-question-core.md、docs/HANDOFF-TASK-003.md、docs/VALIDATION.md。
