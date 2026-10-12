@@ -57,3 +57,11 @@
 - Linear公式文書のTriage rulesはBusiness／Enterprise向け。課題作成時のdelegate直接指定による代替経路を検討する。課題作成だけで起動済みと扱わない。
 - 設定用ブラウザはLinear未ログイン。認証操作が自動承認レビューに拒否されたため、ログインは未実施。理由：具体的なブラウザ認証の許可が必要、既存コネクターの操作経路を優先するとの判定。連携ツールには統合・Triageルール設定の変更機能がないため、ユーザーの明示的なログイン許可待ち。
 - 次：Linear設定画面のログイン許可後、Codex統合の状態・利用可能な委任経路を確認し、CHE-5で結果報告まで検証する。
+
+## Linear設定の確認結果（2026-10-12 13時台）
+- ユーザーからLinearのブラウザログインを許可され、Google本人確認後にログイン成功。任意プロフィール・チーム招待・GitHub/Slack接続をスキップし、任意メール購読は追加せず初期設定を完了。
+- 設定→AI & Agents→Integrations→Codexに公式連携の入口を確認：https://linear.app/checkpoint244/settings/integrations/codex
+- 当該ページのEnableリンクは https://chatgpt.com/codex/settings/connectors 。実際に開くと https://chatgpt.com/ へ転送され、連携設定画面は表示されなかった。現在のブラウザでの接続作業はここで停止。連携が全ユーザーで利用不可とは断定しない。
+- LinearのCodexユーザー検索は候補0件。インストール・委任・CHE-5のCodex実行・結果報告は未確認／未実施。
+- このworkspaceの画面ではCoding sessionsはBasic以上、Triage Intelligence/LoopsはBusiness以上。Linear独自AIへの課金・試用開始は行っていない。
+- Work↔LinearとCodex Cloud環境は利用可能。Linear経由でCodexを自動起動できたとは扱わない。公式接続入口の利用可否が解決してからCHE-5の読み取り確認を委任する。
