@@ -1,6 +1,6 @@
 # 現在地
-更新：2026-10-12／参照コミット：未取得／アプリのリポジトリURL：未確認
-作業担当：Workで文書セットを作成／実装担当：未着手
+更新：2026-10-12／今回の検証基準：main・2852d33f9bf40906a5a980ba728093e4b8e204d2／リポジトリ：https://github.com/moedann/Checkpoint
+今回の作業担当：Work（設定・レビュー）／Codex Cloud（環境導入・検証）。製品実装の変更はなし。
 
 ## 証拠区分
 - 資料報告：添付資料に記述があるが、コード・実行結果は未確認。
@@ -38,3 +38,13 @@
 - git push -u origin main 成功。git ls-remoteでGitHub側mainと初回コミットの一致を確認。
 - .gitignoreで環境変数・署名鍵・JVMクラッシュダンプを除外。
 - 今回アプリの実装変更・テスト・ビルド・実機確認は行っていない。次の開発作業はTASK-001。
+
+## Codex Cloud環境セットアップ（2026-10-12）
+- 環境名：Checkpoint。対象：moedann/Checkpoint。利用範囲：自分のみ。
+- GitHubのmainにlib/・android/・test/・AGENTS.md・docs/・tasks/が保存済みであることをWorkが確認。古い添付文書での上書きは行っていない。
+- Flutter 3.44.0／Dart 3.12.0、JDK 17.0.20.1、Android SDK 36、Gradle 8.11.1を導入。導入・起動手順を環境設定へ保存。
+- Codex Cloud実行報告：Flutterテスト14件成功、Kotlin単体テスト32件成功、デバッグAPK生成・署名検証成功。Flutter解析は情報レベル16件、終了コード1。Workはセットアップ画面の報告を確認（独立した再実行はしていない）。
+- 製品コード・依存宣言・ロックファイルは変更していないとのCodex報告。Kotlinバージョン上書きは使用していない。
+- 実機未確認。Linear連携・自動割当・結果によるWorkの自動再開は未設定。
+- 次の作業：Linear連携を設定。製品実装前にTASK-001の監査成果とGit上の文書を照合する。解析指摘とKotlin宣言／実効バージョン差は別タスクで検討。
+- 実行報告：https://chatgpt.com/local/01a12d51-c03b-77c2-b3d5-5b41204840fb?hostId=local
