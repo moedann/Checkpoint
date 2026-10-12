@@ -48,3 +48,12 @@
 - 実機未確認。Linear連携・自動割当・結果によるWorkの自動再開は未設定。
 - 次の作業：Linear連携を設定。製品実装前にTASK-001の監査成果とGit上の文書を照合する。解析指摘とKotlin宣言／実効バージョン差は別タスクで検討。
 - 実行報告：https://chatgpt.com/local/01a12d51-c03b-77c2-b3d5-5b41204840fb?hostId=local
+
+## Work–Linear接続と準備（2026-10-12）
+- WorkのLinear接続：成功。workspace checkpoint（checkpoint244）／team Checkpoint（CHE）。
+- プロジェクト「チェックポイント」を作成：https://linear.app/checkpoint244/project/チェックポイント-ef7aeab5a6f2
+- 読み取り専用の連携確認課題CHE-5を作成し、取得で保存を確認：https://linear.app/checkpoint244/issue/CHE-5/連携確認codexからcheckpointの最新状態を読み取る
+- Codexユーザー名検索では候補なし。Codex for Linear接続・委任・自動実行は未確認／未実施。
+- Linear公式文書のTriage rulesはBusiness／Enterprise向け。課題作成時のdelegate直接指定による代替経路を検討する。課題作成だけで起動済みと扱わない。
+- 設定用ブラウザはLinear未ログイン。認証操作が自動承認レビューに拒否されたため、ログインは未実施。理由：具体的なブラウザ認証の許可が必要、既存コネクターの操作経路を優先するとの判定。連携ツールには統合・Triageルール設定の変更機能がないため、ユーザーの明示的なログイン許可待ち。
+- 次：Linear設定画面のログイン許可後、Codex統合の状態・利用可能な委任経路を確認し、CHE-5で結果報告まで検証する。
