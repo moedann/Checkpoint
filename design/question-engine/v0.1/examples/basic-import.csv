@@ -1,0 +1,4 @@
+﻿id,type,prompt,options,answer,explanation
+csv1,single_choice,3+4は？,a:6;b:7;c:8,b,3+4=7
+csv2,multiple_choice,偶数をすべて選ぶ,a:2;b:3;c:4,a|c,2と4が偶数
+csv3,entry,日本の首都は？,,東京|東京都,東京（東京都）

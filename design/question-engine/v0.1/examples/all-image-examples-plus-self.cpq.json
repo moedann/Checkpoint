@@ -1,0 +1,453 @@
+{
+  "formatVersion": "1.0.0",
+  "packId": "checkpoint-demo-six-modes",
+  "title": "6方式すべての動作確認（架空の例題）",
+  "authorName": "Checkpoint設計サンプル",
+  "locale": "ja-JP",
+  "description": "ユーザー添付画像の回答方式を模した独自の基礎問題。試験の正式過去問ではない。",
+  "source": "オリジナル例題",
+  "license": "CC0-1.0",
+  "revision": 1,
+  "questions": [
+    {
+      "id": "Q01",
+      "type": "single_choice",
+      "prompt": "地球と太陽の運動について、正しい文を1つ選びなさい。",
+      "options": [
+        {
+          "id": "a",
+          "label": "地球は太陽のまわりを回っている。"
+        },
+        {
+          "id": "b",
+          "label": "太陽は地球のまわりを回っている。"
+        },
+        {
+          "id": "c",
+          "label": "地球は月のまわりを回っている。"
+        },
+        {
+          "id": "d",
+          "label": "太陽と地球は互いのまわりを同じ半径で回っている。"
+        }
+      ],
+      "answerKey": {
+        "optionId": "a"
+      },
+      "explanation": "地球は太陽のまわりを公転しています。",
+      "tags": [
+        "理科",
+        "単一選択"
+      ]
+    },
+    {
+      "id": "Q02",
+      "type": "multiple_choice",
+      "prompt": "次のうち、再生可能エネルギーをすべて選びなさい。",
+      "options": [
+        {
+          "id": "solar",
+          "label": "太陽光発電"
+        },
+        {
+          "id": "wind",
+          "label": "風力発電"
+        },
+        {
+          "id": "oil",
+          "label": "石油"
+        },
+        {
+          "id": "hydro",
+          "label": "水力発電"
+        },
+        {
+          "id": "gas",
+          "label": "天然ガス"
+        }
+      ],
+      "minSelections": 1,
+      "maxSelections": 5,
+      "answerKey": {
+        "optionIds": [
+          "solar",
+          "wind",
+          "hydro"
+        ]
+      },
+      "explanation": "太陽光・風力・水力は再生可能エネルギーです。",
+      "tags": [
+        "理科",
+        "複数選択"
+      ]
+    },
+    {
+      "id": "Q03",
+      "type": "entry",
+      "prompt": "次の空欄を埋めなさい。日本の首都は（　　　）です。",
+      "fields": [
+        {
+          "id": "capital",
+          "label": "A 日本の首都",
+          "mode": "text",
+          "acceptedAnswers": [
+            "東京",
+            "東京都"
+          ],
+          "normalizeNFKC": true
+        }
+      ],
+      "explanation": "日本の首都は東京です。「東京都」も別解として許可します。",
+      "tags": [
+        "地理",
+        "計算",
+        "テキスト数値"
+      ]
+    },
+    {
+      "id": "Q03B",
+      "type": "entry",
+      "prompt": "次の計算結果を求めなさい。8 × 7 = ?",
+      "fields": [
+        {
+          "id": "calculation",
+          "label": "B 8×7",
+          "mode": "number",
+          "expectedValue": 56,
+          "absoluteTolerance": 0
+        }
+      ],
+      "explanation": "8×7＝56です。",
+      "tags": [
+        "地理",
+        "計算",
+        "テキスト数値"
+      ]
+    },
+    {
+      "id": "Q04",
+      "type": "grid",
+      "prompt": "表の入力セルを埋めなさい。3月の売上と仕入れ、利益を計算します。",
+      "columns": [
+        {
+          "id": "jan",
+          "title": "1月"
+        },
+        {
+          "id": "feb",
+          "title": "2月"
+        },
+        {
+          "id": "mar",
+          "title": "3月"
+        }
+      ],
+      "rows": [
+        {
+          "id": "sales",
+          "title": "売上（円）",
+          "cells": [
+            {
+              "columnId": "jan",
+              "mode": "static",
+              "value": "100000"
+            },
+            {
+              "columnId": "feb",
+              "mode": "static",
+              "value": "120000"
+            },
+            {
+              "columnId": "mar",
+              "mode": "number",
+              "expectedValue": 150000
+            }
+          ]
+        },
+        {
+          "id": "cost",
+          "title": "仕入（円）",
+          "cells": [
+            {
+              "columnId": "jan",
+              "mode": "static",
+              "value": "60000"
+            },
+            {
+              "columnId": "feb",
+              "mode": "static",
+              "value": "70000"
+            },
+            {
+              "columnId": "mar",
+              "mode": "number",
+              "expectedValue": 90000
+            }
+          ]
+        },
+        {
+          "id": "profit",
+          "title": "利益（円）",
+          "cells": [
+            {
+              "columnId": "jan",
+              "mode": "static",
+              "value": "40000"
+            },
+            {
+              "columnId": "feb",
+              "mode": "static",
+              "value": "50000"
+            },
+            {
+              "columnId": "mar",
+              "mode": "number",
+              "expectedValue": 60000
+            }
+          ]
+        }
+      ],
+      "explanation": "利益＝売上−仕入。3月は150000−90000＝60000です。",
+      "tags": [
+        "簿記",
+        "表入力"
+      ]
+    },
+    {
+      "id": "Q04B",
+      "type": "grid",
+      "prompt": "次の科目ごとに金額を入力しなさい。",
+      "columns": [
+        {
+          "id": "account",
+          "title": "科目名"
+        },
+        {
+          "id": "amount",
+          "title": "金額（円）"
+        }
+      ],
+      "rows": [
+        {
+          "id": "A",
+          "title": "A",
+          "cells": [
+            {
+              "columnId": "account",
+              "mode": "static",
+              "value": "仕入"
+            },
+            {
+              "columnId": "amount",
+              "mode": "number",
+              "expectedValue": 120000
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "B",
+          "cells": [
+            {
+              "columnId": "account",
+              "mode": "static",
+              "value": "売上"
+            },
+            {
+              "columnId": "amount",
+              "mode": "number",
+              "expectedValue": 300000
+            }
+          ]
+        },
+        {
+          "id": "C",
+          "title": "C",
+          "cells": [
+            {
+              "columnId": "account",
+              "mode": "static",
+              "value": "広告費"
+            },
+            {
+              "columnId": "amount",
+              "mode": "number",
+              "expectedValue": 50000
+            }
+          ]
+        }
+      ],
+      "explanation": "A=120000円、B=300000円、C=50000円。行ごとに正誤を確認します。",
+      "tags": [
+        "簿記",
+        "表入力",
+        "金額入力"
+      ]
+    },
+    {
+      "id": "Q05",
+      "type": "interaction",
+      "mode": "ordering",
+      "prompt": "仕事の工程を正しい順番に並べなさい。",
+      "items": [
+        {
+          "id": "sales",
+          "label": "販売"
+        },
+        {
+          "id": "design",
+          "label": "設計"
+        },
+        {
+          "id": "planning",
+          "label": "企画"
+        },
+        {
+          "id": "production",
+          "label": "製造"
+        }
+      ],
+      "answerKey": {
+        "orderedIds": [
+          "planning",
+          "design",
+          "production",
+          "sales"
+        ]
+      },
+      "explanation": "例：企画→設計→製造→販売です。",
+      "tags": [
+        "順序"
+      ]
+    },
+    {
+      "id": "Q06",
+      "type": "interaction",
+      "mode": "grouping",
+      "prompt": "次の食品を「果物の仲間」「野菜の仲間」に分類しなさい。",
+      "items": [
+        {
+          "id": "apple",
+          "label": "りんご"
+        },
+        {
+          "id": "mandarin",
+          "label": "みかん"
+        },
+        {
+          "id": "cucumber",
+          "label": "きゅうり"
+        },
+        {
+          "id": "tomato",
+          "label": "トマト"
+        }
+      ],
+      "groups": [
+        {
+          "id": "fruit",
+          "label": "果物の仲間"
+        },
+        {
+          "id": "vegetable",
+          "label": "野菜の仲間"
+        }
+      ],
+      "answerKey": {
+        "assignments": [
+          {
+            "itemId": "apple",
+            "groupId": "fruit"
+          },
+          {
+            "itemId": "mandarin",
+            "groupId": "fruit"
+          },
+          {
+            "itemId": "cucumber",
+            "groupId": "vegetable"
+          },
+          {
+            "itemId": "tomato",
+            "groupId": "vegetable"
+          }
+        ]
+      },
+      "explanation": "この問題では一般的な食生活上の分類を採用します。",
+      "tags": [
+        "分類"
+      ]
+    },
+    {
+      "id": "Q07",
+      "type": "word_bank",
+      "prompt": "語群から選び、文を完成させなさい。",
+      "segments": [
+        {
+          "kind": "text",
+          "value": "日本の首都は（"
+        },
+        {
+          "kind": "blank",
+          "id": "A"
+        },
+        {
+          "kind": "text",
+          "value": "）で、関西の中心都市の一つは（"
+        },
+        {
+          "kind": "blank",
+          "id": "B"
+        },
+        {
+          "kind": "text",
+          "value": "）です。"
+        }
+      ],
+      "tokens": [
+        {
+          "id": "tokyo",
+          "label": "東京"
+        },
+        {
+          "id": "osaka",
+          "label": "大阪"
+        },
+        {
+          "id": "nagoya",
+          "label": "名古屋"
+        }
+      ],
+      "reuseTokens": false,
+      "answerKey": {
+        "matches": [
+          {
+            "blankId": "A",
+            "tokenId": "tokyo"
+          },
+          {
+            "blankId": "B",
+            "tokenId": "osaka"
+          }
+        ]
+      },
+      "explanation": "Aは東京、Bは大阪です。",
+      "tags": [
+        "穴埋め"
+      ]
+    },
+    {
+      "id": "Q08",
+      "type": "self_review",
+      "prompt": "紙に一次方程式 2x + 3 = 11 を解き、途中式も書きなさい。",
+      "activityMode": "paper",
+      "modelAnswer": "2x = 8、したがって x = 4",
+      "reviewRubric": "答えx=4に加え、移項または両辺から3を引く過程を確認します。",
+      "explanation": "数式の手書き入力を自動採点したとは扱わず、自分で答え合わせします。",
+      "tags": [
+        "数学",
+        "自己採点"
+      ]
+    }
+  ]
+}
