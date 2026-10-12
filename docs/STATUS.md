@@ -65,3 +65,11 @@
 - LinearのCodexユーザー検索は候補0件。インストール・委任・CHE-5のCodex実行・結果報告は未確認／未実施。
 - このworkspaceの画面ではCoding sessionsはBasic以上、Triage Intelligence/LoopsはBusiness以上。Linear独自AIへの課金・試用開始は行っていない。
 - Work↔LinearとCodex Cloud環境は利用可能。Linear経由でCodexを自動起動できたとは扱わない。公式接続入口の利用可否が解決してからCHE-5の読み取り確認を委任する。
+
+## 接続失敗の調査（2026-10-12）
+- 確認済み：作成したCheckpoint環境は現行Codex CloudのSelect environment→Create→Install script／Start skill→Publish方式。
+- OpenAI公式の現行Cloud environments資料は、Linear・GitHub統合をCodex Cloud（Legacy）側の機能として区別している：https://learn.chatgpt.com/docs/environments/cloud-environments ／ https://learn.chatgpt.com/docs/environments/cloud-environment
+- 設計上の誤り：現行環境の作成を、LegacyのLinear統合を利用できる前提として扱っていた。現行環境を作成しただけでLinearの起動先として使えるとは扱わない。
+- 再現済み：ログイン済みPlusアカウントで公式の https://chatgpt.com/codex/settings/connectors を開いても https://chatgpt.com/ に移動し、現行Codexホームが表示される。Linear認証はすでに成功している。GitHub・製品コードを調整して解決する問題とは根拠なし。
+- 未特定：Legacyの接続画面が表示されないサービス側の具体的理由（移行・アカウント提供条件・一時不具合等）。内部の権限・配布・HTTP転送条件は確認できていない。Legacy廃止済み、Plus非対応、全ユーザーで連携不可とは断定しない。
+- Linear直接委任・CHE-5実行は未実施。原因調査中にAPI課金、Linearアップグレード、追加セキュリティ権限の付与は行っていない。
