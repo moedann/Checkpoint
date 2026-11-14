@@ -3,7 +3,7 @@
 - 作業担当：Claude Code（2026-11-14）
 - リポジトリ・ブランチ：moedann/Checkpoint／claude/context-engineering-dev-rules-aa31e0
 - 基準コミット／結果コミット：479cc4b／このファイルを含むコミット
-- 未コミット差分の有無：なし。PRリンク：未作成（push・PRは依頼されていない）
+- 未コミット差分の有無：なし。PRリンク：https://github.com/moedann/Checkpoint/pull/2（2026-11-14作成、base main、レビュー待ち・未マージ）
 
 ## 結果
 ユーザーのどの体験をどう変えたか：アプリの動作は変更なし。AIが作業開始時に読む量を減らし、古い情報を読む誤りを防ぐ。
