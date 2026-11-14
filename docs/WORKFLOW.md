@@ -15,6 +15,9 @@ GitHubにアクセスできない場合は、対象コミットID付きの差分
 同じコミットから作ったAPKをPixel 7aへ導入。操作手順と期待結果をユーザーへ渡し、実際の結果をVALIDATIONへ記録。
 失敗は再現条件を新しいタスクへ落とす。確認待ちは確認済と区別する。
 
+## コンテキストの約束
+読む範囲・文書の大きさ・記録の置き場所は`docs/CONTEXT_RULES.md`に従う。Work・Codex・Claude Codeで共通。
+
 ## 同期の約束
 - 正式なコード・仕様・状態は https://github.com/moedann/Checkpoint に集める。
 - ChatGPTプロジェクトに添付した文書がGitの更新と自動同期するとは仮定しない。

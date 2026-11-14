@@ -26,4 +26,5 @@ Workで判断すること：
 Pixel 7aで試す手順：
 既知の問題：
 次のタスク：
-文書更新：STATUS／SPEC／DECISIONS／VALIDATION／対象タスク
+次のセッションが最初に読むもの（ファイルと見出し・ID）：
+文書更新：STATUS／tasks/README／SPEC／DECISIONS／log/VALIDATION_LOG／対象タスク
